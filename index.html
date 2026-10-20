@@ -174,6 +174,37 @@
   .hero-couple:hover { color: var(--paper); box-shadow: inset 0 0 0 1px var(--gold); }
   .hero-couple i { font-style: normal; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bg); background: var(--gold); border-radius: 999px; padding: 3px 9px; font-weight: 700; }
 
+
+  /* Android kurulum rehberi */
+  .install { padding: 0 0 104px; }
+  .install-head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 44px; }
+  .install h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(32px, 4vw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0; }
+  .install-head p { color: var(--soft); margin: 0; font-size: 16px; }
+  .trust { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .trust span { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--soft); padding: 7px 14px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line-strong); }
+  .trust svg { width: 15px; height: 15px; color: var(--wine); flex: none; }
+  .isteps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: s; }
+  .istep { display: flex; flex-direction: column; gap: 16px; }
+  .istep h3 { font-family: var(--serif); font-weight: 400; font-size: 19px; line-height: 1.25; margin: 14px 0 0; display: flex; gap: 10px; align-items: baseline; }
+  .istep h3::before { counter-increment: s; content: counter(s); flex: none; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--wine), var(--coral)); color: #fff; font-size: 13px; font-style: italic; line-height: 26px; text-align: center; transform: translateY(-2px); }
+  .istep p { margin: 0; color: var(--soft); font-size: 14px; line-height: 1.55; }
+  .istep p b { color: var(--paper); font-weight: 600; }
+  /* Telefon uyarısının küçük örneği */
+  .dlg { border-radius: 20px; padding: 18px 18px 14px; background: var(--bg-2); box-shadow: inset 0 0 0 1px var(--line-strong), 0 18px 40px -28px rgba(0, 0, 0, 0.45); font-size: 13px; line-height: 1.45; min-height: 176px; display: flex; flex-direction: column; }
+  .dlg .t { font-weight: 600; color: var(--paper); margin-bottom: 6px; }
+  .dlg .d { color: var(--soft); flex: 1; }
+  .dlg .row { display: flex; justify-content: flex-end; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+  .dlg .b { padding: 6px 10px; border-radius: 999px; color: var(--muted); font-weight: 600; font-size: 12.5px; }
+  .dlg .b.hit { color: var(--wine); box-shadow: 0 0 0 2px var(--coral); }
+  .dlg .sw { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; padding: 10px 12px; border-radius: 12px; box-shadow: 0 0 0 2px var(--coral); color: var(--paper); font-weight: 600; }
+  .dlg .sw i { width: 34px; height: 20px; border-radius: 999px; background: var(--wine); position: relative; flex: none; }
+  .dlg .sw i::after { content: ""; position: absolute; right: 3px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: #fff; }
+  .dlg .more { color: var(--wine); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; box-shadow: 0 0 0 2px var(--coral); border-radius: 6px; padding: 0 3px; }
+  .install-foot { margin: 40px 0 0; padding: 22px 26px; border-radius: 18px; box-shadow: inset 0 0 0 1px var(--line); color: var(--soft); font-size: 14px; }
+  .install-foot b { color: var(--paper); font-weight: 600; }
+  .install-foot a, .note a { color: var(--wine); font-weight: 600; text-decoration: none; }
+  html:not([data-theme="dark"]) .dlg { background: #FFFFFF; }
+
   .close { text-align: center; padding: 96px 0 104px; }
   .close img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; mask-image: radial-gradient(circle, #000 55%, transparent 71%); -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 71%); }
   .close h2 { margin: 20px auto 16px; }
@@ -205,6 +236,9 @@
     .step, .step + .step { padding: 26px 0; border-left: 0; border-bottom: 1px solid var(--line); }
     .promise ul { grid-template-columns: 1fr; }
     .couple { padding-bottom: 80px; }
+    .install { padding-bottom: 80px; }
+    .install-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+    .isteps { grid-template-columns: 1fr 1fr; gap: 36px 16px; }
     .couple-card { grid-template-columns: 1fr; gap: 36px; padding: 40px 24px; border-radius: 26px; text-align: left; }
     .couple-foot { margin: -8px 0 0; }
     .close { padding: 72px 0 80px; }
@@ -215,6 +249,8 @@
     .wrap { padding: 0 16px; }
     .btn { width: 100%; justify-content: center; }
     .features { grid-template-columns: 1fr; }
+    .isteps { grid-template-columns: 1fr; }
+    .dlg { min-height: 0; }
     .couple-card { padding: 34px 20px; }
   }
 
@@ -378,6 +414,66 @@
   </div>
 </section>
 
+<section class="install" id="kurulum">
+  <div class="wrap">
+    <div class="install-head reveal">
+      <div>
+        <p class="eyebrow">Android'e kurulum</p>
+        <h2>Bir dakikada kur.<br>Uyarılar normal.</h2>
+      </div>
+      <div>
+        <p>TrueLove henüz Google Play'de olmadığı için Android, tanımadığı her uygulamada olduğu gibi birkaç uyarı gösterir. Bu bir sorun olduğu anlamına gelmez. iPhone sürümü Apple'ın incelemesinden geçerek App Store'da yer alır.</p>
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 9.5 4-1.2 7-5 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg><span data-ios-status style="box-shadow:none;padding:0">iPhone sürümü Apple incelemesinde</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 9.5 4-1.2 7-5 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>Dosya yalnızca resmî adresimizden iner</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 9.5 4-1.2 7-5 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>Google Play sürümü yakında</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="isteps">
+      <div class="istep reveal">
+        <div class="dlg">
+          <div class="t">Dosya indirilsin mi?</div>
+          <div class="d">Bu dosya türü cihazınıza zarar verebilir. truelove.apk yine de indirilsin mi?</div>
+          <div class="row"><span class="b">İptal</span><span class="b hit">Yine de indir</span></div>
+        </div>
+        <h3>İndir</h3>
+        <p>"Hemen indir"e dokun. Tarayıcı sorarsa <b>Yine de indir</b> de.</p>
+      </div>
+      <div class="istep reveal">
+        <div class="dlg">
+          <div class="t">Bilinmeyen uygulamalar</div>
+          <div class="d">Güvenliğiniz için bu kaynaktan uygulama yüklenmesine izin verilmiyor.</div>
+          <div class="sw">Bu kaynaktan izin ver<i></i></div>
+        </div>
+        <h3>İzin ver</h3>
+        <p>İnen dosyayı aç. Telefon izin isterse <b>Ayarlar</b>'a gir, <b>Bu kaynaktan izin ver</b>'i aç ve geri dön.</p>
+      </div>
+      <div class="istep reveal">
+        <div class="dlg">
+          <div class="t">Play Protect uyarısı</div>
+          <div class="d">Bu uygulama Google Play'de olmadığı için Play Protect onu tanımıyor. <span class="more">Daha fazla ayrıntı</span></div>
+          <div class="row"><span class="b">Tamam</span><span class="b hit">Yine de yükle</span></div>
+        </div>
+        <h3>Yine de yükle</h3>
+        <p>Bu uyarıda hemen "Tamam"a basma. Önce <b>Daha fazla ayrıntı</b>'ya, sonra <b>Yine de yükle</b>'ye dokun.</p>
+      </div>
+      <div class="istep reveal">
+        <div class="dlg">
+          <div class="t">Uygulama yüklendi</div>
+          <div class="d">TrueLove telefonuna kuruldu.</div>
+          <div class="row"><span class="b">Bitti</span><span class="b hit">Aç</span></div>
+        </div>
+        <h3>Aç ve başla</h3>
+        <p>Hepsi bu. Bir daha APK indirmen gerekmez; yenilikler uygulamaya kendiliğinden gelir.</p>
+      </div>
+    </div>
+
+    <p class="install-foot reveal"><b>Düğmeler farklı mı görünüyor?</b> Düğme adları telefonun markasına göre biraz değişebilir; örneğin "Daha fazla göster", "Taramadan yükle" ya da "Yine de yükle". Hangisi yüklemeye devam ettiriyorsa onu seç. Takılırsan <a href="https://truelove-app.expo.app/?sayfa=destek">destek sayfasından</a> bize yaz.</p>
+  </div>
+</section>
+
 <div class="divider"></div>
 
 <section class="close">
@@ -428,9 +524,11 @@
     var boxes = document.querySelectorAll('[data-downloads]');
     for (var i = 0; i < boxes.length; i++) boxes[i].innerHTML = html;
     var note = document.querySelector('[data-note]');
-    if (note) note.textContent = isAndroid
-      ? 'Dosya inince açıp yükle. Telefon "bilinmeyen kaynak" uyarısı verirse tarayıcına yükleme izni ver. Google Play sürümü yakında.'
+    if (note) note.innerHTML = isAndroid
+      ? 'Kurulumda telefon birkaç uyarı gösterebilir, bu normal. <a href="#kurulum">Adım adım kurulum</a>'
       : (live ? '' : 'iPhone sürümü Apple onayında. Bu sayfayı kaydet; yayına çıktığında indirme düğmesi burada olacak.');
+    var st = document.querySelector('[data-ios-status]');
+    if (st) st.textContent = live ? 'iPhone sürümü App Store\'da yayında' : 'iPhone sürümü Apple incelemesinde';
   }
 
   render(false);
